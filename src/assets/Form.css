@@ -1,0 +1,139 @@
+/* Page background */
+.form {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 30px; /* spacing between form & table */
+}
+
+
+/* Form container */
+form {
+  background: #ffffff;
+  padding: 30px 35px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus */
+form input:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
+}
+
+/* Button */
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #2575fc;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Button hover */
+form button:hover {
+  background: #1a5ed8;
+  transform: translateY(-2px);
+}
+
+/* Button active */
+form button:active {
+  transform: translateY(0);
+}
+/* Table container */
+table {
+  width: 90%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Table header */
+thead {
+  background: #2575fc;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Table rows */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #f2f6ff;
+}
+
+/* Action buttons */
+td button {
+  padding: 6px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+td button:first-child {
+  background: #ffc107;
+  color: #000;
+}
+
+td button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+
+td button:hover {
+  opacity: 0.85;
+}
