@@ -14,34 +14,42 @@ function Form() {
 
   const { name, age, email, phone } = formdata;
 
+  const [editIndex, setEditIndex] = useState(null);
+
   // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.name]: e.target.value });
   };
 
-  // Handle submit
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (name && age && email && phone) {
-      // API call (optional, for learning)
-      axios
-        .post("https://jsonplaceholder.typicode.com/posts", formdata)
-        .then((res) => console.log("API response:", res.data))
-        .catch((err) => console.log(err));
+  if (name && age && email && phone) {
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", formdata)
+      .then((res) => console.log("API response:", res.data))
+      .catch((err) => console.log(err));
 
-      // Add form data to table
-      setData([...data, formdata]);
+    if (editIndex !== null){
+      setData(prevData => prevData.map((item,index) =>
+      index === editIndex ? formdata : item));
+      setEditIndex(null);
 
-      // Reset form
-      setFormData({ name: "", age: "", email: "", phone: "" });
+    }else{
+      setData(prevData => [...prevData, formdata]);
+      setFormData({name:"",age:"",email:"",phone:""});
     }
-  };
+    
+
+    
+  }
+};
+
 
   // Edit row
   const handleEdit = (index) => {
     setFormData(data[index]);
-    handleDelete(index);
+    setEditIndex(index);
   };
 
   // Delete row
